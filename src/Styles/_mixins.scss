@@ -1,0 +1,15 @@
+@mixin flex($justify-content:center,$align-items:center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items:$align-items;
+}
+@mixin grid($rows,$columns,$justify-items:center,$align-items:center) {
+    display: grid;
+    grid-template: $rows / $columns;
+    justify-items: $justify-items;
+    align-items: $align-items;
+}
+@mixin widthAndHeight ($width:100%,$height:100%){
+    width: $width;
+    height: $height;
+} 

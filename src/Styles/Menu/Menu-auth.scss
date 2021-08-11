@@ -1,0 +1,17 @@
+@import '../mixins';
+
+.menu-auth{
+    @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+    @include grid(50% 50%,100%);
+    background-color: blanchedalmond;
+    box-shadow:  0 0 3px black;
+    .menu-auth-username{
+        @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+        @include flex(space-around,center);
+        font-size: 1.3rem;
+    }
+    .menu-auth-icons{
+        @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+        @include flex(space-around,center);
+    }
+}

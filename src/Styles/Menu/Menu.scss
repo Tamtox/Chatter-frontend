@@ -1,0 +1,39 @@
+@import '../mixins';
+.menu{
+    @include widthAndHeight(calc(min(100%, 30rem)),calc(min(100%,100vh )));
+    @include grid(15% 85%, 90% 10%,center,center);
+    position: fixed;
+    font-size: 1.2rem;
+    left: 0;
+    z-index: 100;
+    transition: 0.5s;
+    .toggle{
+        @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+        @include flex(flex-end,center);
+        grid-area: 1 / 2 / span 3 / span 1;
+        .toggle-icon{
+            font-size: 2.5rem;
+            transition: 0.5s;
+            align-self: center;
+            color: rgb(255, 255, 255);
+        }
+        .open{
+            transform: rotate(180deg);
+        }
+        .open:hover{
+            filter:drop-shadow(-3px -5px 5px rgba(0, 0, 0, 0.4));
+        }
+        .close{
+            transform: rotate(0deg);
+        }
+        .close:hover{
+            filter:drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.4));
+        }
+    }
+}
+.menuClose{
+    transform: translateX(-90%);
+}
+.menuOpen{
+    transform: translateX(0);
+}

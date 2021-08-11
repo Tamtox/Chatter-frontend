@@ -1,0 +1,136 @@
+@import 'mixins';
+html, body, #root, .App {
+    height: 100%;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    .App{
+        background-color: rgb(126, 182, 14);
+        @include flex(center,center);
+        main{
+            @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+            @include flex;
+        }
+        .border-radius{
+            border-radius: 4px;
+        }
+        .box-shadow{
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        .button{
+            @include widthAndHeight(calc(min(95%, 13rem)),calc(min(95%, 3rem)));
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            outline: inherit;
+            box-shadow: 1px 1.5px 4px rgba(0, 0, 0, 0.7);
+            border-radius: 4px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .button:active{
+            scale: 0.98;
+        }
+        .dark{}
+        .focus{
+            transition: transform 0.3s;
+        }
+        .focus:focus{
+            transform: scale(1.01);
+        }
+        .hover{
+            transition: box-shadow 0.3s;
+        }
+        .hover:hover{
+            box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+        .hover-filter{
+            transition: 0.3s;
+        }
+        .hover-filter:hover{
+            filter:drop-shadow(3px 5px 3px rgba(0, 0, 0, 0.4));
+            transform: scale(1.02);
+        }
+        .icon{
+            font-size: 2rem;
+        }
+        .link{
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-link{
+            text-decoration: none;
+            color: inherit  ;
+            transition: 0.5s;
+            font-size: 1.2rem;
+        }
+        // Transition Animations
+        .fade-in {
+            animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+        @keyframes fade-in {
+            0% {
+            opacity: 0;
+            transform: translateY(-15px);
+            }
+            100% {
+            opacity: 1;
+            transform: translateY(0);
+            }
+        }
+        .text-focus-in {
+            animation: text-focus-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+        @keyframes text-focus-in {
+            0% {
+                filter: blur(6px);
+            opacity: 0;
+            }
+            100% {
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+        .scale-in {
+            animation: scale-in 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        @keyframes scale-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        } 
+        .opacity-transition{
+            animation: opacity-transition 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        @keyframes opacity-transition {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .slide-in-top {
+            animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        @keyframes slide-in-top {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }  
+} 

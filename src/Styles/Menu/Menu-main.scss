@@ -1,0 +1,41 @@
+@import '../mixins';
+
+.menu-main{
+    @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+    @include grid(7% 93%,100%);
+    background-color: white;
+    box-shadow:  0 0 5px black;
+    .menu-selector{
+        @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+        @include grid(100%,1fr 1fr);
+        .menu-selector-item{
+            @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+            @include flex;
+            border: solid black 1px;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .active-menu{
+            border: solid black 1px;
+            border-bottom: solid rgba(0, 0, 0, 0) 1px;
+        }
+    }
+    .menu-list{
+        @include widthAndHeight(calc(min(100%, 100%)),calc(min(100%,100%)));
+        display: grid;
+        grid-template-columns: 100%;
+        grid-auto-rows: 10%;
+        padding-top: 10%;
+        justify-items: center;
+        align-items: center;
+        gap: 2%;
+        .contact{
+            @include widthAndHeight(calc(min(100%, 95%)),calc(min(100%,100%)));
+            @include flex;
+        }
+        .chat{
+            @include widthAndHeight(calc(min(100%, 95%)),calc(min(100%,100%)));
+            @include flex;
+        }
+    }
+}
